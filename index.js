@@ -79,8 +79,10 @@ Car.prototype.fill = function (gallons) {
 Car.prototype.drive = function (distance) {
   this.odometer += distance;
   this.tank -= (distance / this.milesPerGallon);
+  if (this.tank === 0) {
+    return `I ran out of fuel at ${this.odometer} miles!`;
+    }
   }
-  
   
   /*
     TASK 3
@@ -101,9 +103,12 @@ Car.prototype.drive = function (distance) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
+    1. The subject of the "this" keyword depends on the current execution context. If we're not inside of a function, the current scope is the global scope so "this" refers to the window. This is easier to understand when you think about the Document Object Model. If you think of the window as the main object of the program, "this" will refer to that object.
+    
+    2. Adding on to the previous point, as soon as the scope changes, so does the meaning of "this". The principle of implicit binding tells us that "this" will refer to whatever object we're currently working in. Like standard Object notation, if a method is called then "this" will refer to the Object calling the method.
+    
     3. 
+    
     4. 
   */
   
