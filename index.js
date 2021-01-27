@@ -107,9 +107,9 @@ Car.prototype.drive = function (distance) {
     
     2. Adding on to the previous point, as soon as the scope changes, so does the meaning of "this". The principle of implicit binding tells us that "this" will refer to whatever object we're currently working in. Like standard Object notation, if a method is called then "this" will refer to the Object calling the method.
     
-    3. 
+    3. When using constructors, "this" will refer to the specific instance of the object function.
     
-    4. 
+    4. The last principle of the "this" keyword pertains the ability to explicitly bind the keyword. By using the .call and .apply methods we can specify what context "this" should be called in.
   */
   
   
